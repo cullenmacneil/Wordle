@@ -1,0 +1,145 @@
+body {
+    max-width: 100%;
+    background-color: #121213;
+    color: #ffffff;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+:root {
+    --empty: #3a3a3c;
+    --wrong: #b59f3b;
+    --right: #538d4e; 
+}
+
+.app-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #3A3A3C;
+}
+
+.title {
+    font-family: "nyt-karnakcondensed";
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.menu-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menu-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.board-module {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    justify-items: center;
+    }
+
+.row-module {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+}
+
+.tile {
+    font-family: "nyt-franklin";
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    border: 2px solid #3A3A3C;
+    width: 48px;
+    height: 48px;
+}
+
+.tile.empty {
+    background: var(--empty);
+}
+
+.tile.wrong {
+    background: var(--wrong);
+}
+
+.tile.right {
+    background: var(--right);
+}
+
+@media (min-width: 768px) and (min-width: 1024px) {
+    .title { 
+        text-align: center;
+        font-size: 36px;
+        font-weight: 700;
+        letter-spacing: 0.36px;
+        line-height: 65px;
+        height: 65px;
+    }
+}
+
+@media (min-width: 768px){
+    .title {
+        text-align: center;
+        font-size: 32px;
+        letter-spacing: 0.32px;
+        width: calc(100% - 700px);
+    }
+    .menu-left {
+        width: 350px;
+    }
+    .menu-right {
+        width: 350px;
+    }
+}
+
+@media (min-width: 1024px){
+    .title {
+        text-align: center;
+        font-size: 36px;
+        letter-spacing: 0.36px;
+    }
+}
+
+.animated {
+    animation: flip 0.5s ease;
+}
+
+@keyframes flip {
+    0% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0);
+
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
