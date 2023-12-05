@@ -74,46 +74,49 @@
             </div>
         </div>
     </div>
-    <div class="keyboard-module" id="keyboard">
-            <div class="keyboard-row-module">
-                <button type="button">Q</button>
-                <button type="button">W</button>
-                <button type="button">E</button>
-                <button type="button">R</button>
-                <button type="button">T</button>
-                <button type="button">Y</button>
-                <button type="button">U</button>
-                <button type="button">I</button>
-                <button type="button">O</button>
-                <button type="button">P</button>
-            </div>
-            <div class="keyboard-row-module">
-                <button type="button">A</button>
-                <button type="button">S</button>
-                <button type="button">D</button>
-                <button type="button">F</button>
-                <button type="button">G</button>
-                <button type="button">H</button>
-                <button type="button">J</button>
-                <button type="button">K</button>
-                <button type="button">L</button>
-            </div>
-            <div class="keyboard-row-module">
-                <button type="button">Enter</button>
-                <button type="button">Z</button>
-                <button type="button">X</button>
-                <button type="button">C</button>
-                <button type="button">V</button>
-                <button type="button">B</button>
-                <button type="button">N</button>
-                <button type="button">M</button>
-                <button type="button">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" class="game-icon" data-testid="icon-backspace">
-                        <path fill="white" d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z"></path>
-                    </svg>
-                </button>
+    <div class="keyboard-container">
+        <div class="keyboard-module" id="keyboard">
+                <div class="keyboard-row-module">
+                    <button type="button" class="button" id="q" onclick="pressed('q')">Q</button>
+                    <button type="button" class="button" id="w" onclick="pressed('w')">W</button>
+                    <button type="button" class="button" id="e" onclick="pressed('e')">E</button>
+                    <button type="button" class="button" id="r" onclick="pressed('r')">R</button>
+                    <button type="button" class="button" id="t" onclick="pressed('t')">T</button>
+                    <button type="button" class="button" id="y" onclick="pressed('y')">Y</button>
+                    <button type="button" class="button" id="u" onclick="pressed('u')">U</button>
+                    <button type="button" class="button" id="i" onclick="pressed('i')">I</button>
+                    <button type="button" class="button" id="o" onclick="pressed('o')">O</button>
+                    <button type="button" class="button" id="p" onclick="pressed('p')">P</button>
+                </div>
+                <div class="keyboard-row-module">
+                    <button type="button" class="button" id="a" onclick="pressed('a')">A</button>
+                    <button type="button" class="button" id="s" onclick="pressed('s')">S</button>
+                    <button type="button" class="button" id="d" onclick="pressed('d')">D</button>
+                    <button type="button" class="button" id="f" onclick="pressed('f')">F</button>
+                    <button type="button" class="button" id="g" onclick="pressed('g')">G</button>
+                    <button type="button" class="button" id="h" onclick="pressed('h')">H</button>
+                    <button type="button" class="button" id="j" onclick="pressed('j')">J</button>
+                    <button type="button" class="button" id="k" onclick="pressed('k')">K</button>
+                    <button type="button" class="button" id="l" onclick="pressed('l')">L</button>
+                </div>
+                <div class="keyboard-row-module">
+                    <button type="button" class="button" id="Enter" onclick="checkWord()">?</button>
+                    <button type="button" class="button" id="z" onclick="pressed('z')">Z</button>
+                    <button type="button" class="button" id="x" onclick="pressed('x')">X</button>
+                    <button type="button" class="button" id="c" onclick="pressed('c')">C</button>
+                    <button type="button" class="button" id="v" onclick="pressed('v')">V</button>
+                    <button type="button" class="button" id="b" onclick="pressed('b')">B</button>
+                    <button type="button" class="button" id="n" onclick="pressed('n')">N</button>
+                    <button type="button" class="button" id="m" onclick="pressed('m')">M</button>
+                    <button type="button" class="button" id="Delete" onclick="deleteLetter()">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" class="game-icon" data-testid="icon-backspace">
+                            <path fill="white" d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
+    </div>
 </body>
 
 </html>

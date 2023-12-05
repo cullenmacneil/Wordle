@@ -39,6 +39,20 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+function pressed(id) {
+    console.log(id);
+    const tile = document.getElementById(`${currentRow}-${currentTile}`);
+
+    if (currentRow > 5){
+        return;
+    } else if (currentTile < maxTiles && isLetter(id)){
+        updateGrid(id);
+    } else {
+        return;
+    }
+};
+
+
 function isLetter(key) {
     return key.length === 1 && key.match(/[a-z]/i);
 }
@@ -73,52 +87,65 @@ function checkWord() {
     const tile = document.getElementById(`${currentRow}-${currentTile}`);
     // Logic to validate the word goes here
     const guess = getUserGuess();
-    if (guess === randomWord){
-        for (let i = 0; i < 5; i++){
-            const box = document.getElementById(`${currentRow}-${i}`);
-            const letter = box.textContent;
-
-            setTimeout(() => {
-                if (letter === randomWord[i]) {
-                    box.classList.add('right');
-                }
-            }, ((i + 1) * animation_duration) / 2);
-
-            box.classList.add('animated')
-            box.style.animationDelay = `${(i * animation_duration / 2)}ms`;
-        }
-        setTimeout(() => {
-            window.alert('Congrats!')
-        }, 1500)
-    } else if (words.includes(guess) != true) {
-        window.alert("Not in words list")
+    if (currentTile != 5) {
+        return;
     } else {
-        for (let i = 0; i < 5; i++){
-            const box = document.getElementById(`${currentRow}-${i}`);
-            const letter = box.textContent;
+        if (guess === randomWord){
+            for (let i = 0; i < 5; i++){
+                const box = document.getElementById(`${currentRow}-${i}`);
+                const letter = box.textContent.toLowerCase();
+                const key = document.getElementById(letter);
+                console.log(key);
 
+
+
+                setTimeout(() => {
+                    if (letter === randomWord[i]) {
+                        box.classList.add('right');
+                        key.classList.add('right');
+                    }
+                }, ((i + 1) * animation_duration) / 2);
+
+                box.classList.add('animated')
+                box.style.animationDelay = `${(i * animation_duration / 2)}ms`;
+            }
             setTimeout(() => {
-                if (letter === randomWord[i]) {
-                    box.classList.add('right');
-                } else if (randomWord.includes(letter)) {
-                    box.classList.add('wrong');
-                } else {
-                    box.classList.add('empty');
-                }
-            }, ((i + 1) * animation_duration) / 2);
-
-            box.classList.add('animated')
-            box.style.animationDelay = `${(i * animation_duration / 2)}ms`;
-        }
-
-        if (currentRow === maxTiles){
-            setTimeout(() => 
-            window.alert("Next time! The word was " + randomWord), 1500 );
+                window.alert('Congrats!')
+            }, 1500)
+        } else if (words.includes(guess) != true) {
+            window.alert("Not in words list")
         } else {
-        currentTile = 0;
-        }
-        currentRow++;
+            for (let i = 0; i < 5; i++){
+                const box = document.getElementById(`${currentRow}-${i}`);
+                const letter = box.textContent;
+                const key = document.getElementById(letter);
+
+                setTimeout(() => {
+                    if (letter === randomWord[i]) {
+                        box.classList.add('right');
+                        key.classList.add('right');
+                    } else if (randomWord.includes(letter)) {
+                        box.classList.add('wrong');
+                        key.classList.add('maybe');
+                    } else {
+                        box.classList.add('empty');
+                        key.classList.add('wrong');
+                    }
+                }, ((i + 1) * animation_duration) / 2);
+
+                box.classList.add('animated')
+                box.style.animationDelay = `${(i * animation_duration / 2)}ms`;
+            }
+
+            if (currentRow === maxTiles){
+                setTimeout(() => 
+                window.alert("Next time! The word was " + randomWord), 1500 );
+            } else {
+            currentTile = 0;
+            }
+            currentRow++;
     }
+}
 
     // Reset the currentTile and increment currentRow for the next word
 }

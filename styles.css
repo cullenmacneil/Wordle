@@ -128,26 +128,38 @@ button {
     }
 }
 
-#keyboard-module {
-    height: 200px;
-  }
-  
-  .keyboard-row-module {
+.keyboard-container {
     display: flex;
     justify-content: center;
-    width: 30%;
+    align-items: center;
+}
+
+.keyboard-module {
     margin: 0 auto 8px;
+    vertical-align: baseline;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.keyboard-row-module {
+    display: flex;
+    margin: 0 auto 8px;
+    justify-content: center;
+    width: 100%;
     touch-action: manipulation;
   }
   
-  .keyboard-row-module button {
-    font-family: ny;
+.keyboard-row-module button {
+    font-family: inherit;
     font-weight: bold;
+    font-size: 1.25em;
     border: 0;
     padding: 0;
+    width: 39px;
     height: 58px;
     cursor: pointer;
-    background-color:var(--key);
+    background-color: var(--key);
     color: white;
     flex-grow: 1;
     text-transform: uppercase;
@@ -155,11 +167,18 @@ button {
     border-radius: 4px;
     user-select: none;
   }
-  
-  .keyboard-row button.wide-button {
-    flex-grow: 1.5;
-  }
-  
+
+button.right {
+    background-color: var(--right) !important;
+}
+
+button.wrong {
+    background: var(--empty);
+}
+
+button.maybe {
+    background: var(--wrong);
+}
 
 .animated {
     animation: flip 0.5s ease;
