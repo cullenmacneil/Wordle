@@ -8,7 +8,8 @@ body {
 :root {
     --empty: #3a3a3c;
     --wrong: #b59f3b;
-    --right: #538d4e; 
+    --right: #538d4e;
+    --key:   #808384; 
 }
 
 .app-header {
@@ -126,6 +127,39 @@ button {
         letter-spacing: 0.36px;
     }
 }
+
+#keyboard-module {
+    height: 200px;
+  }
+  
+  .keyboard-row-module {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+  }
+  
+  .keyboard-row-module button {
+    font-family: ny;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    height: 58px;
+    cursor: pointer;
+    background-color:var(--key);
+    color: white;
+    flex-grow: 1;
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
+  }
+  
+  .keyboard-row button.wide-button {
+    flex-grow: 1.5;
+  }
+  
 
 .animated {
     animation: flip 0.5s ease;
