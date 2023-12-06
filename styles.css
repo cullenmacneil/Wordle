@@ -168,7 +168,7 @@ button {
     font-size: 12.45px;
   }
 
-  @media (min-width: 768px){
+  @media (min-width: 852px){
     .keyboard-row-module {
         margin: 0 auto 8px;
       }
