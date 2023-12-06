@@ -118,10 +118,6 @@ button {
     .menu-right {
         width: 350px;
     }
-    .keyboard-row-module button {
-        width: 19.5px;
-        height: 29px;
-    }
 }
 
 @media (min-width: 1024px){
@@ -139,7 +135,7 @@ button {
 }
 
 .keyboard-module {
-    margin: 0 auto 8px;
+    margin: 0 auto 3.3px;
     vertical-align: baseline;
     align-items: center;
     justify-content: center;
@@ -153,24 +149,37 @@ button {
     width: 100%;
     touch-action: manipulation;
   }
-  
-.keyboard-row-module button {
+
+  .keyboard-row-module button {
     font-family: inherit;
     font-weight: bold;
-    font-size: 1.25em;
     border: 0;
     padding: 0;
-    width: 39px;
-    height: 58px;
     cursor: pointer;
     background-color: var(--key);
     color: white;
     flex-grow: 1;
     text-transform: uppercase;
-    margin-right: 6px;
-    border-radius: 4px;
     user-select: none;
+    width: 24.375px;
+    height: 36.15px;
+    margin-right: 3.75px;
+    border-radius: 2.55px;
+    font-size: 12.45px;
   }
+
+  @media (min-width: 768px){
+    .keyboard-row-module {
+        margin: 0 auto 8px;
+      }
+      .keyboard-row-module button {
+        font-size: 1.25em;
+        width: 39px;
+        height: 58px;
+        margin-right: 6px;
+        border-radius: 4px;
+      }
+}
 
 button.right {
     background-color: var(--right) !important;
