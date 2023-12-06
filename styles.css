@@ -118,6 +118,10 @@ button {
     .menu-right {
         width: 350px;
     }
+    .keyboard-row-module button {
+        width: 19.5px;
+        height: 29px;
+    }
 }
 
 @media (min-width: 1024px){
