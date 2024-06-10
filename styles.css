@@ -1,3 +1,13 @@
+@font-face {
+    font-family: NYTKarnak;
+    src: url(Karnak\ Small\ Normal.ttf);
+}
+
+@font-face {
+    font-family: nyt-franklin;
+    src: url(Franklin\ Normal\ 700.ttf);
+}
+
 body {
     max-width: 100%;
     background-color: #121213;
@@ -23,7 +33,7 @@ body {
 }
 
 .title {
-    font-family: "nyt-karnakcondensed";
+    font-family: "NYTKarnak";
     font-size: 36px;
     font-weight: 700;
     text-align: center;

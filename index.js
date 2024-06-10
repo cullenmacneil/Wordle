@@ -154,7 +154,13 @@ function checkWord() {
 
 
 function help() {
-    console.log ("This is the help button");
+    alert(`How to Play Wordle
+    
+    How To Play
+    Guess the Wordle in 6 tries.
+    Each guess must be a valid 5-letter word.
+    The color of the tiles will change to show how close your guess was to the word.
+    This version is replayable, that means you can replay the game as many times as you want, you just need to refresh the page for a new game`);
 }
 
 function settings() {
